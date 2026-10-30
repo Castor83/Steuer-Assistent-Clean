@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anmeldung · Steuer-Assistent</title>
+  <style>
+    :root{color-scheme:dark;font-family:system-ui,sans-serif;background:#0d1118;color:#eef4ff}*{box-sizing:border-box}body{min-height:100vh;margin:0;display:grid;place-items:center;padding:24px;background:radial-gradient(circle at top,#1c2d46,#0d1118 55%)}main{width:min(420px,100%);padding:32px;border:1px solid #304865;border-radius:18px;background:#141d29;box-shadow:0 22px 60px #0008}.logo{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:#2d72d2;font-size:28px;font-weight:800}h1{margin:20px 0 8px}p{color:#b9c7d8;line-height:1.5}label{display:block;margin:18px 0 8px;font-weight:700}input{width:100%;padding:13px 14px;border:1px solid #47617e;border-radius:10px;background:#0f1722;color:#fff;font-size:17px}button{width:100%;margin-top:18px;padding:13px;border:0;border-radius:10px;background:#3b82e6;color:white;font-size:16px;font-weight:700;cursor:pointer}.fehler{padding:11px 13px;border-radius:9px;background:#57252c;color:#ffd9dd}.hinweis{margin-top:20px;font-size:13px}
+  </style>
+</head>
+<body><main>
+  <div class="logo">€</div><h1>Steuer-Assistent</h1>
+  <p>Diese Anwendung ist im privaten Heimnetz geschützt.</p>
+  {% if fehler %}<div class="fehler" role="alert">{{ fehler }}</div>{% endif %}
+  <form method="post" action="/anmelden">
+    <label for="username">Benutzername</label>
+    <input id="username" name="username" type="text" maxlength="80" autocomplete="username" autofocus required>
+    <label for="passwort">Kennwort</label>
+    <input id="passwort" name="passwort" type="password" maxlength="200" autocomplete="current-password" required>
+    <button type="submit">Anmelden</button>
+  </form>
+  <p class="hinweis">Die Konten werden ausschließlich auf dem Haupt-PC geprüft.</p>
+</main></body></html>
